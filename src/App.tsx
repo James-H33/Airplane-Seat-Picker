@@ -1,12 +1,14 @@
-import './App.css'
-import { Canvas } from '@react-three/fiber'
-import Experience from './components/Experience'
 import { Environment, MeshReflectorMaterial } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import { useState } from 'react'
+import './App.css'
+import Experience from './components/Experience'
 import SeatInfoCard from './components/SeatInfoCard/SeatInfoCard'
+import { useExperience } from './context/ExperienceContext'
 
 function App(): JSX.Element {
   const [activeSeat, setActiveSeat] = useState<any>(null)
+  const [state, _] = useExperience();
 
   return (
     <>
@@ -40,7 +42,7 @@ function App(): JSX.Element {
         <Environment preset="dawn" />
       </Canvas>
 
-      { activeSeat && <SeatInfoCard {...activeSeat} /> }
+      { state.activeSeat && <SeatInfoCard {...state.activeSeat} /> }
     </>
   )
 }
