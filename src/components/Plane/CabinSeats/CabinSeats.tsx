@@ -7,6 +7,7 @@ const CabinSeats = ({ level, seatStart = 1, seatCount = 10, price, position, mod
   for (let i = 0; i < rowsCount; i++) {
     rows.push(
       <Row
+        key={level + i}
         level={level}
         row={`${i + seatStart}`}
         model={model.nodes.Backing}

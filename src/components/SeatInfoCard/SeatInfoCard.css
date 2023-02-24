@@ -21,6 +21,7 @@
 .seat-info.expanded .seat-info-details {
   transition: 500ms ease 100ms;
   opacity: 1;
+  /* animation: FadeIn 300ms forwards ease; */
 }
 
 .seat-info.expanded .seat-info-expand-toggle {
@@ -45,6 +46,10 @@
   opacity: 0;
 }
 
+.seat-info-details ul {
+  animation: FadeIn 300ms forwards ease;
+}
+
 .seat-info-expand-toggle {
   display: flex;
   align-items: center;
@@ -61,8 +66,14 @@
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   padding-bottom: 2px;
-
   cursor: pointer;
+}
+
+.seat-info-expand-toggle svg {
+  margin-top: 2px;
+  margin-left: 2px;
+  width: 12px;
+  height: 13px;
 }
 
 .seat-info-back {
@@ -90,4 +101,14 @@ button {
   margin-top: 10px;
   background-color: #111;
   cursor: pointer;
+}
+
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
