@@ -76,7 +76,7 @@ const Row = ({ model, level, price, position = [0, 0, 0], row }: any) => {
             return (
               <>
                 <mesh
-                  key={index}
+                  key={level + '-row-' + index}
                   castShadow
                   receiveShadow
                   geometry={model.geometry}

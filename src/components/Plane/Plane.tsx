@@ -10,6 +10,7 @@ const Plane = (props: any) => {
   const [front]: any = useGLTF(['/front.glb'])
   const [back]: any = useGLTF(['/back.glb'])
   const [firstClass]: any = useGLTF(['/first-class.glb'])
+  const [wings]: any = useGLTF(['/wings.glb'])
   const ref: any = useRef()
   const scroll = useScroll()
   useFrame(() => (ref.current.position.x = scroll.offset * 120))
@@ -21,6 +22,8 @@ const Plane = (props: any) => {
     transparent: true,
     opacity: 0.5
   })
+
+  const textSize = 2;
 
   return (
     <>
@@ -37,13 +40,21 @@ const Plane = (props: any) => {
         >
         </mesh>
 
-
-
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={wings.nodes.Wings.geometry}
+          material={planeMaterial}
+          position={[-14, 0, -1.7]}
+          rotation={[0, Math.PI, 0]}
+          scale={[1, 1, 1]}
+        >
+        </mesh>
 
         {/* First Class */}
         <group position={[-2, 0, 0]}>
           <Text
-            fontSize={2.2}
+            fontSize={textSize}
             color="coral"
             position={[1.5, 0.5, -4]}
             rotation={[-0.1, 0, 0]}>
@@ -74,7 +85,7 @@ const Plane = (props: any) => {
         {/* Business */}
         <group position={[-11.5, 0, 0]}>
           <Text
-            fontSize={2.2}
+            fontSize={textSize}
             color="coral"
             position={[-0.2, 0.5, -4]}
             rotation={[-0.1, 0, 0]}>
@@ -106,7 +117,7 @@ const Plane = (props: any) => {
         {/* Economy */}
         <group position={[-24, 0, 0]}>
         <Text
-            fontSize={2.2}
+            fontSize={textSize}
             color="coral"
             position={[-0.2, 0.5, -4]}
             rotation={[-0.1, 0, 0]}>
@@ -140,7 +151,7 @@ const Plane = (props: any) => {
           receiveShadow
           geometry={back.nodes.Back.geometry}
           material={planeMaterial}
-          position={[-36, 0.4, -0.5]}
+          position={[-34, 0.4, -0.5]}
           rotation={[0, Math.PI, 0]}
           scale={[1, 1, 1]}
         >
