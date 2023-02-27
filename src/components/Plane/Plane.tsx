@@ -14,7 +14,8 @@ const Plane = (props: any) => {
   const [wings]: any = useGLTF([assets.wings])
   const ref: any = useRef()
   const scroll = useScroll()
-  useFrame(() => (ref.current.position.x = scroll.offset * 120))
+  const planePositionOffsetMultiplier = 30;
+  useFrame(() => (ref.current.position.x = scroll.offset * planePositionOffsetMultiplier))
 
   const planeMaterial = new THREE.MeshStandardMaterial({
     color: '#333',

@@ -1,11 +1,11 @@
-import { OrbitControls, ScrollControls } from '@react-three/drei';
-import './Experience.css'
-import Plane from "./Plane/Plane"
+import { ScrollControls } from '@react-three/drei';
+import './Experience.css';
+import Plane from "./Plane/Plane";
 
 const Experience = (props: any) => {
   return (
     <>
-      <ScrollControls pages={3}>
+      <ScrollControls pages={2} distance={0.5}>
         <Plane {...props} />
       </ScrollControls>
 
