@@ -3,14 +3,15 @@ import { useFrame } from "@react-three/fiber"
 import { useRef } from "react"
 import CabinSeats from './CabinSeats/CabinSeats'
 import * as THREE from 'three'
+import { assets } from "../../utils/assets"
 
 const Plane = (props: any) => {
-  const [cabin]: any = useGLTF(['/cabin.glb'])
-  const [seat]: any = useGLTF(['/seat.glb'])
-  const [front]: any = useGLTF(['/front.glb'])
-  const [back]: any = useGLTF(['/back.glb'])
-  const [firstClass]: any = useGLTF(['/first-class.glb'])
-  const [wings]: any = useGLTF(['/wings.glb'])
+  const [cabin]: any = useGLTF([assets.cabin])
+  const [seat]: any = useGLTF([assets.seat])
+  const [front]: any = useGLTF([assets.front])
+  const [back]: any = useGLTF([assets.back])
+  const [firstClass]: any = useGLTF([assets.firstClass])
+  const [wings]: any = useGLTF([assets.wings])
   const ref: any = useRef()
   const scroll = useScroll()
   useFrame(() => (ref.current.position.x = scroll.offset * 120))
