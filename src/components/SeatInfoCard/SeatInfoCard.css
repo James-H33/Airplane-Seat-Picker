@@ -21,7 +21,6 @@
 .seat-info.expanded .seat-info-details {
   transition: 500ms ease 100ms;
   opacity: 1;
-  /* animation: FadeIn 300ms forwards ease; */
 }
 
 .seat-info.expanded .seat-info-expand-toggle {
@@ -47,6 +46,7 @@
 }
 
 .seat-info-details ul {
+  margin-left: 20px;
   animation: FadeIn 300ms forwards ease;
 }
 
