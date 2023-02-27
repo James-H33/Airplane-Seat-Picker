@@ -26,6 +26,7 @@ function App(): JSX.Element {
           <planeGeometry args={[50, 50]} />
           <MeshReflectorMaterial
             blur={[400, 100]}
+            mirror={1}
             resolution={1024}
             mixBlur={1}
             mixStrength={15}

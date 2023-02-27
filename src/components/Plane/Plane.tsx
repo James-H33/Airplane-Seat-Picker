@@ -25,6 +25,7 @@ const Plane = (props: any) => {
 
   const textSize = 2;
   const textColor = '#ddd';
+  const textY = 0.6;
 
   return (
     <>
@@ -57,7 +58,7 @@ const Plane = (props: any) => {
           <Text
             fontSize={textSize}
             color={textColor}
-            position={[1.5, 0.5, -4]}
+            position={[1.5, textY, -4]}
             rotation={[-0.1, 0, 0]}>
             First Class
           </Text>
@@ -88,7 +89,7 @@ const Plane = (props: any) => {
           <Text
             fontSize={textSize}
             color={textColor}
-            position={[-0.2, 0.5, -4]}
+            position={[-0.2, textY, -4]}
             rotation={[-0.1, 0, 0]}>
             Business
           </Text>
@@ -120,7 +121,7 @@ const Plane = (props: any) => {
         <Text
             fontSize={textSize}
             color={textColor}
-            position={[-0.2, 0.5, -4]}
+            position={[-0.2, textY, -4]}
             rotation={[-0.1, 0, 0]}>
             Economy
           </Text>
